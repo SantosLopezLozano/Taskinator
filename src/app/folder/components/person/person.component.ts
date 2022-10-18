@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Person } from '../../model/person';
+import { PeopleService } from '../../services/people.service';
 
 @Component({
   selector: 'app-person',
@@ -7,8 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonComponent implements OnInit {
 
-  constructor() { }
+  @Output() onEdit = new EventEmitter;
+  @Output() onDelete = new EventEmitter;
+  @Input() person:Person;
+  constructor(
+    private peopleS:PeopleService
+  ){
 
-  ngOnInit() {}
+  }
+
+ 
+
+  ngOnInit(
+  ) {
+
+  } 
+  getPeople() {
+    return this.peopleS.getPeople()
+  }
+
+  onEditClick(){
+    this.onEdit.emit(this.person);
+  }
+
+  onDeleteClick(){
+    this.onDelete.emit(this.person);
+  }
 
 }

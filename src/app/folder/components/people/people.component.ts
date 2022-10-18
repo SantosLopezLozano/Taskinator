@@ -9,6 +9,7 @@ import { PeopleService } from '../../services/people.service';
 })
 export class PeopleComponent implements OnInit {
 
+  person: Person
   constructor(
     private peopleS:PeopleService,
   ) { }

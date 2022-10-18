@@ -1,0 +1,7 @@
+{
+  "name": "Taskinator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

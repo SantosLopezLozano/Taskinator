@@ -1,3 +1,12 @@
-<p>
-  {{person.name}}
-</p>
+<ion-item>
+
+  <ion-avatar style="width:50px;height:50px;margin:10px;margin-right:20px">
+    <img *ngIf="!person.picture" src="https://ionicframework.com/docs/img/demos/avatar.svg"/>
+    <!--Lo de arriba es sin [] porque pilla una url, pero lo de abajo tiene [] porque lo que 
+      llama es algo, por eso lo de arriba tiene !, para que si no carga eso carque lo de abajo-->
+    <img *ngIf="person.picture" [src]="person.picture"/>
+  </ion-avatar>
+
+  <ion-label>{{person.surname}}, {{person.name}}</ion-label>
+
+</ion-item>

@@ -8,12 +8,16 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
+  
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
   </ion-header>
   
+  <!--Esto mola mucho, sirve para llamar a los componentes como si fueran la pagina para que se pongan
+  por encima de esta que está vacía excepto por el header. Importante porque esto pega perfecto para
+  mi pagina personal-->
   <app-home *ngIf="folder=='Home'"></app-home>
   <app-people *ngIf="folder=='People'"></app-people>
   <app-task *ngIf="folder=='Task'"></app-task>

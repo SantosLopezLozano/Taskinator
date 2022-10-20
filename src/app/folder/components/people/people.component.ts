@@ -1,6 +1,6 @@
+import { PeopleService } from './../../services/people.service';
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../../model/person';
-import { PeopleService } from '../../services/people.service';
+import { AlertController, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-people',
@@ -9,9 +9,10 @@ import { PeopleService } from '../../services/people.service';
 })
 export class PeopleComponent implements OnInit {
 
-  person: Person
   constructor(
-    private peopleS:PeopleService,
+    private peopleService: PeopleService,
+    private modal:ModalController,
+    private alert:AlertController
   ) { }
 
   ngOnInit() {
@@ -19,7 +20,11 @@ export class PeopleComponent implements OnInit {
   }
 
   getPeople(){
-    return this.peopleS.getPeople();
+    return this.peopleService.getPeople();
   }
+
+  /*newPerson(){
+    this.personForm(null)
+  }*/
 
 }

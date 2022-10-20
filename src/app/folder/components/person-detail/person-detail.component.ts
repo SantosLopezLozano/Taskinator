@@ -1,14 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonModal } from '@ionic/angular';
+import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
   selector: 'app-person-detail',
-  templateUrl: './person-detail.component.html',
+  templateUrl: './person.detail.component.html',
   styleUrls: ['./person-detail.component.scss'],
 })
-export class PersonDetailComponent implements OnInit {
+export class ExampleComponent {
+  @ViewChild(IonModal) modal: IonModal;
 
-  constructor() { }
+  message = 'Example Forlm';
+  name: string;
 
-  ngOnInit() {}
+  cancel() {
+    this.modal.dismiss(null, 'cancel');
+  }
 
+  confirm() {
+    this.modal.dismiss(this.name, 'confirm');
+  }
+
+  onWillDismiss(event: Event) {
+    const ev = event as CustomEvent<OverlayEventDetail<string>>;
+    if (ev.detail.role === 'confirm') {
+      this.message = `Hello, ${ev.detail.data}!`;
+    }
+  }
 }

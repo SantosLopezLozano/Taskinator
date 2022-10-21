@@ -1,10 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Form Person</ion-title>
+    <ion-title>Datos de la persona</ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-input></ion-input>
-  <ion-button ion-button type="submit" block (click)="confirm">Cancell</ion-button>
-  <ion-button ion-button type="submit" block (click)="confirm">Submit</ion-button>
+  <form [formGroup]="form" (ngSubmit)="confirm()">
+    <ion-item>
+      <ion-label>
+        Name
+      </ion-label>
+      <ion-input type="text" placeholder="Examle: Sara" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Surname
+      </ion-label>
+      <ion-input type="text" placeholder="Example: Chidouin" formControlName="surname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Nickname
+      </ion-label>
+      <ion-input type="text" placeholder="Example: Sarita" formControlName="nickname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Picture
+      </ion-label>
+      <ion-input type="text" placeholder="Example: https://something.com" formControlName="picture"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+  </form>
 </ion-content>

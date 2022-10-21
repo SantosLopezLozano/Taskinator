@@ -55,4 +55,18 @@ export class PeopleService {
   deletePerson(id:number) {
     this.people = this.people.filter(p=>p.id != id); 
   }
+
+  editPerson(person:Person){
+    var person = this.people.find(p=>p.id==person.id);
+    if(person){
+      person.name = person.name;
+      person.surname = person.surname;
+      person.nickname = person.nickname;
+      person.picture = person.picture;
+    }
+  }
+  addPerson(person:Person){
+    person.id = this.id++;
+    this.people.push(person);
+  }
 }

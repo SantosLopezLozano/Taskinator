@@ -29,6 +29,10 @@ export class PeopleComponent implements OnInit {
     this.personForm(null)
   }
 
+  editPerson(person){
+    this.personForm(person)
+  }
+
   //Esto es alertController, creas una constante que espera a que se llame y cuando se haga crea en controlador con las opciones de abajo
   async onDeleteAlert(person) {
     const alert = await this.alert.create({
@@ -50,7 +54,6 @@ export class PeopleComponent implements OnInit {
         },
       ],
     });
-
     await alert.present();
   }
 
@@ -58,6 +61,8 @@ export class PeopleComponent implements OnInit {
   deletePerson(person) {
     this.onDeleteAlert(person)
   }
+
+
 
   async personForm(person: Person) {
     const modal = await this.modal.create({
@@ -67,6 +72,19 @@ export class PeopleComponent implements OnInit {
       }
     });
     modal.present();
+    modal.onDidDismiss().then(result=>{
+      if(result && result.data){
+        switch(result.data.mode){
+          case 'New':
+            this.peopleService.addPerson(result.data.person);
+            break;
+          case 'Edit':
+            this.peopleService.editPerson(result.data.person);
+            break;
+          default:
+        }
+      }
+    });
   }
 }
 

@@ -33,17 +33,22 @@ export class PeopleComponent implements OnInit {
     this.personForm(person)
   }
 
-  //Esto es alertController, creas una constante que espera a que se llame y cuando se haga crea en controlador con las opciones de abajo
-  async onDeleteAlert(person) {
+  deletePerson(person) {
+    this.Delete(person)
+  }
+
+
+
+
+  //////////////////////////////////ALLERT CONTROLLER/////////////////////////////////////////////////////////////////////////////////////
+  async Delete(person) {
     const alert = await this.alert.create({
       header: 'Delete Person?',
+
       buttons: [
         {
           text: 'Cancel',
           role: 'cancel',
-          handler: () => {
-            console.log("Cancelled");
-          },
         },
         {
           text: 'Delete',
@@ -57,13 +62,8 @@ export class PeopleComponent implements OnInit {
     await alert.present();
   }
 
-  //Por algún motivo el deletePerson solo funciona si el aller controler está arriba, si está debajo da error
-  deletePerson(person) {
-    this.onDeleteAlert(person)
-  }
 
-
-
+  //////////////////////////////////////////FORMULARIO////////////////////////////////////////////////////////////
   async personForm(person: Person) {
     const modal = await this.modal.create({
       component: PersonDetailComponent,

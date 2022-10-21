@@ -4,10 +4,10 @@ import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
   selector: 'app-person-detail',
-  templateUrl: './person.detail.component.html',
+  templateUrl: './person-detail.component.html',
   styleUrls: ['./person-detail.component.scss'],
 })
-export class ExampleComponent {
+export class PersonDetailComponent {
   @ViewChild(IonModal) modal: IonModal;
 
   message = 'Example Forlm';

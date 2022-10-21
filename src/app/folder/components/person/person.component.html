@@ -7,6 +7,8 @@
     <img *ngIf="person.picture" [src]="person.picture"/>
   </ion-avatar>
 
-  <ion-label>{{person.surname}}, {{person.name}}</ion-label>
+  <ion-label>{{person.name}} {{person.surname}}</ion-label>
+  <ion-button (click)="sendPersonEdit()">Edit</ion-button>
+  <ion-button (click)="sendPersonDelete()">Delete</ion-button>
 
 </ion-item>

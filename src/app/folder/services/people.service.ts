@@ -6,7 +6,7 @@ import { Person } from '../model/person';
 })
 export class PeopleService {
 
-  private _people:Person[] = [
+  private people:Person[] = [
     {
       id:1,
       name:"1",
@@ -39,16 +39,20 @@ export class PeopleService {
     }
   ];
 
-  id:number = this._people.length+1;
+  id:number = this.people.length+1;
   constructor() {
 
   }
 
   getPeople(){
-    return this._people;
+    return this.people;
   }
 
   getPersonById(id:number){
-    return this._people.find(p=>p.id==id);
+    return this.people.find(p=>p.id==id);
+  }
+
+  deletePerson(id:number) {
+    this.people = this.people.filter(p=>p.id != id); 
   }
 }

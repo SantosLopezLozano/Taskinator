@@ -28,11 +28,13 @@ export class PersonComponent implements OnInit {
     return this.peopleS.getPeople()
   }
 
-  onEditClick(){
+  //Esto sirve para que al pulsar edit se envíen los datos de la persona en la que has pulsado edit
+  sendPersonEdit(){
     this.onEdit.emit(this.person);
   }
 
-  onDeleteClick(){
+  //Esto sirve para que al pulsar delete se envíen los datos de la pensona en la que has ulsado el botón delete
+  sendPersonDelete(){
     this.onDelete.emit(this.person);
   }
 

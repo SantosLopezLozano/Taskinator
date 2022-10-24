@@ -1,3 +1,10 @@
-<p>
-  task works!
-</p>
+<ion-item>
+
+  <ion-avatar style="width:50px;height:50px;margin:10px;margin-right:20px">
+    <img *ngIf="task?.picture" [src]="task.picture"/>
+  </ion-avatar>
+  <ion-label>{{task.name}}</ion-label>
+  <ion-button (click)="sendTaskEdit()">Edit</ion-button>
+  <ion-button (click)="sendTaskDelete()">Delete</ion-button>
+
+</ion-item>

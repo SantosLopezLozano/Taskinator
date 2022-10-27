@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Task } from '../../model/task';
+import { Task } from 'src/app/core/models/task';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -23,10 +23,10 @@ export class TaskDetailComponent implements OnInit {
 
 
   constructor(
-    private fb:FormBuilder,
-    private modal:ModalController
+    private formBuilder:FormBuilder,
+    private modalController:ModalController
   ) { 
-    this.form = this.fb.group({
+    this.form = this.formBuilder.group({
       id:[null],
       name:['', [Validators.required]],
       picture:['']
@@ -38,7 +38,7 @@ export class TaskDetailComponent implements OnInit {
   }
 
   confirm(){
-    this.modal.dismiss({task: this.form.value, mode:this.mode}, 'ok');
+    this.modalController.dismiss({task: this.form.value, mode:this.mode}, 'ok');
   }
 
 }

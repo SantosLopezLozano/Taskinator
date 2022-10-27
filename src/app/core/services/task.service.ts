@@ -1,4 +1,4 @@
-import { Task } from './../model/task';
+import { Task } from '../models/task';
 import { Injectable } from '@angular/core';
 
 @Injectable({

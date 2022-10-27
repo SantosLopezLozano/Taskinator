@@ -8,7 +8,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Home', url: '/folder/Home', icon: 'home'},
     { title: 'People', url: '/folder/People', icon: 'people' },
-    { title: 'Task', url: '/folder/Task', icon: 'file-tray-full' },
+    { title: 'Tasks', url: '/folder/Tasks', icon: 'file-tray-full' },
     { title: 'Assignments', url: '/folder/Assign', icon: 'list' },
     { title: 'Task pane', url: '/folder/Task Panel', icon: 'layers' },
   ];

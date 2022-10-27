@@ -1,5 +1,8 @@
-import { PeopleComponent } from './../people/people.component';
+import { AsignmentComponent } from './../../../core/components/assignment/assignment.component';
+import { AsignmentService } from 'src/app/core/services/asignments';
+import { Asignment } from 'src/app/core/models/asignments';
 import { Component, OnInit } from '@angular/core';
+import { AlertController, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-assignments',
@@ -9,19 +12,22 @@ import { Component, OnInit } from '@angular/core';
 export class AssignmentsComponent implements OnInit {
 
   constructor(
-    private peopleComponent: PeopleComponent,
+    private asignmentService: AsignmentService,
+    private modal: ModalController,
+    private alert: AlertController
   ) { }
 
   ngOnInit() {}
 
-  getPeople() {
-    return this.peopleComponent.getPeople();
+  getAsignment() {
+    return this.asignmentService.getAsignment();
   }
-  editPerson(person){
+
+  editasignment(asignment){
 
   }
 
-  deletePerson(person){
+  deleteAsignment(asignment){
 
   }
 

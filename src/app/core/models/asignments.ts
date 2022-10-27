@@ -1,4 +1,4 @@
-export interface Asignments {
+export interface Asignment {
   id:number;
   name:string;
   person:string;

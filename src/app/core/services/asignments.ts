@@ -1,12 +1,12 @@
-import { Asignments } from './../models/asignments';
+import { Asignment } from '../models/asignments';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PeopleService {
+export class AsignmentService {
 
-  private asignments:Asignments[] = [
+  private asignment:Asignment[] = [
     {
       id:1,
       name:"leades",
@@ -23,25 +23,25 @@ export class PeopleService {
     }
   ];
 
-  id:number = this.asignments.length+1;
+  id:number = this.asignment.length+1;
   constructor() {
 
   }
 
   getAsignment(){
-    return this.asignments;
+    return this.asignment;
   }
 
   getAsignmentById(id:number){
-    return this.asignments.find(p=>p.id==id);
+    return this.asignment.find(p=>p.id==id);
   }
 
   deleteAsignment(id:number) {
-    this.asignments = this.asignments.filter(p=>p.id != id); 
+    this.asignment = this.asignment.filter(p=>p.id != id); 
   }
 
-  editAsignment(_asignment:Asignments){
-    var asignment = this.asignments.find(p=>p.id==_asignment.id);
+  editAsignment(_asignment:Asignment){
+    var asignment = this.asignment.find(p=>p.id==_asignment.id);
     if(asignment){
       asignment.name = _asignment.name;
       asignment.person = _asignment.person;
@@ -49,8 +49,8 @@ export class PeopleService {
       asignment.picture = _asignment.picture;
     }
   }
-  addAsignment(asignment:Asignments){
+  addAsignment(asignment:Asignment){
     asignment.id = this.id++;
-    this.asignments.push(asignment);
+    this.asignment.push(asignment);
   }
 }

@@ -1,3 +1,4 @@
+import { AsignmentComponent } from './components/assignment/assignment.component';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
 import { TaskDetailComponent } from './components/task-detail/task-detail.component';
 import { TaskComponent } from './components/task/task.component';
@@ -14,7 +15,8 @@ import { CommonModule } from '@angular/common';
     PersonComponent,
     TaskComponent,
     TaskDetailComponent,
-    PersonDetailComponent
+    PersonDetailComponent,
+    AsignmentComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { CommonModule } from '@angular/common';
     PersonComponent,
     TaskComponent,
     TaskDetailComponent,
-    PersonDetailComponent
+    PersonDetailComponent,
+    AsignmentComponent
   ]
 })
 export class CoreModule { }

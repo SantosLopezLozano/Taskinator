@@ -46,11 +46,11 @@ export class TaskService {
     this.task = this.task.filter(p=>p.id != id); 
   }
 
-  editTask(task:Task){
-    var task = this.task.find(p=>p.id==task.id);
+  editTask(_task:Task){
+    var task = this.task.find(p=>p.id==_task.id);
     if(task){
-      task.name = task.name;
-      task.picture = task.picture;
+      task.name = _task.name;
+      task.picture = _task.picture;
     }
   }
   addTask(task:Task){

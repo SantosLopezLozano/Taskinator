@@ -1,4 +1,3 @@
-import { PersonSelectableComponent } from './components/person-selectable/person-selectable.component';
 import { AsignmentComponent } from './components/assignment/assignment.component';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
 import { TaskDetailComponent } from './components/task-detail/task-detail.component';

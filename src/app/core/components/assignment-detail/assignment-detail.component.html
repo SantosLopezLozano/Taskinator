@@ -11,13 +11,13 @@
       <ion-label>
         Person
       </ion-label>
-      <ion-input type="text" placeholder="Examle: Sara" formControlName="name"></ion-input>
+      <ion-input type="number" formControlName="personId"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>
         Task
       </ion-label>
-      <ion-input type="text" placeholder="Example: Chidouin" formControlName="surname"></ion-input>
+      <ion-input type="number" formControlName="taskId"></ion-input>
     </ion-item>
     <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
   </form>

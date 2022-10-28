@@ -29,10 +29,12 @@ export class AssignmentsComponent implements OnInit {
   }
 
   editasignment(asignment){
+    this.asignmentForm(asignment)
 
   }
 
   deleteAsignment(asignment){
+    this.Delete(asignment)
 
   }
 

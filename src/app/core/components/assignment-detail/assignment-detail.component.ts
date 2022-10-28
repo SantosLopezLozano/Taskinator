@@ -15,8 +15,8 @@ export class AssignmentDetailComponent implements OnInit {
   @Input('asignment') set asignment(asignment:Asignment){
     if(asignment){
       this.form.controls.id.setValue(asignment.id);
-      this.form.controls.name.setValue(asignment.personId);
-      this.form.controls.surname.setValue(asignment.taskId);
+      this.form.controls.peronId.setValue(asignment.personId);
+      this.form.controls.taskId.setValue(asignment.taskId);
       this.mode = "Edit";
     }
   }
@@ -28,10 +28,8 @@ export class AssignmentDetailComponent implements OnInit {
   ) { 
     this.form = this.formBuilder.group({
       id:[null],
-      name:['', [Validators.required]],
-      surname:['', [Validators.required]],
-      nickname:['', [Validators.required]],
-      picture:['']
+      taskId:['', [Validators.required]],
+      personId:['', [Validators.required]]
     });
   }
 

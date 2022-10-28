@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Asignments</ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="confirm()">
+    <ion-item>
+      <ion-label>
+        Person
+      </ion-label>
+      <ion-input type="text" placeholder="Examle: Sara" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Task
+      </ion-label>
+      <ion-input type="text" placeholder="Example: Chidouin" formControlName="surname"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+  </form>
+</ion-content>

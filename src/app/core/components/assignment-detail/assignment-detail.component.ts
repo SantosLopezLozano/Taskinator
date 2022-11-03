@@ -1,3 +1,6 @@
+import { AsignmentService } from './../../services/asignments';
+import { PeopleService } from './../../services/people.service';
+import { TaskService } from './../../services/task.service';
 import { ModalController } from '@ionic/angular';
 import { Asignment } from 'src/app/core/models/asignments';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -23,6 +26,9 @@ export class AssignmentDetailComponent implements OnInit {
   
 
   constructor(
+    private tasksService:TaskService,
+    private peopleService:PeopleService,
+    private asignmentsService:AsignmentService,
     private formBuilder:FormBuilder,
     private modalController:ModalController
   ) { 

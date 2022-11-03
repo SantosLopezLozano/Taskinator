@@ -32,6 +32,14 @@ export class AsignmentService {
     return this.asignment.find(p=>p.id==id);
   }
 
+  getAsignmentsByTaskId(taskId:number):Asignment[]{
+    return this.asignment.filter(a=>a.taskId == taskId);
+  }
+
+  getAsignmentsByPersonId(personId:number):Asignment[]{
+    return this.asignment.filter(a=>a.personId == personId);
+  }
+
   deleteAsignment(id:number) {
     this.asignment = this.asignment.filter(p=>p.id != id); 
   }
@@ -46,5 +54,14 @@ export class AsignmentService {
   addAsignment(asignment:Asignment){
     asignment.id = this.id++;
     this.asignment.push(asignment);
+  }
+
+  updateAssignment(assignment:Asignment){
+    var _assignment = this.asignment.find(a=>a.id==assignment.id);
+    if(_assignment){
+      _assignment.taskId = assignment.taskId;
+      _assignment.personId = assignment.personId;
+    }
+    
   }
 }

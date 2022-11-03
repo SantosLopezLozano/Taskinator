@@ -1,3 +1,5 @@
+import { PeopleService } from './../../services/people.service';
+import { TaskService } from './../../services/task.service';
 import { Task } from './../../models/task';
 import { AsignmentService } from '../../services/asignments';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
@@ -17,7 +19,10 @@ export class AsignmentComponent implements OnInit {
   @Input() person:Person
   @Input() task:Task
   constructor(
-    private asignmentService:AsignmentService
+    private asignmentService:AsignmentService,
+    private tastService:TaskService,
+    private peopleService:PeopleService
+
   ){
 
   }
@@ -38,6 +43,18 @@ export class AsignmentComponent implements OnInit {
 
   sendAsignmentDelete(){
     this.onDelete.emit(this.asignment);
+  }
+
+  getTask():Task{
+    var taskId = this.asignment.taskId;
+    if(taskId)
+      return this.tastService.getTaskById(taskId);
+    return undefined;
+  }
+  getPerson():Person{
+    var personId = this.asignment.personId;
+    if(personId)
+      return this.peopleService.getPersonById(personId)
   }
 
 }

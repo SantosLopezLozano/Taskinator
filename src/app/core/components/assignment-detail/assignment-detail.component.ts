@@ -1,3 +1,4 @@
+import { Person } from './../../models/person';
 import { AsignmentService } from './../../services/asignments';
 import { PeopleService } from './../../services/people.service';
 import { TaskService } from './../../services/task.service';
@@ -18,7 +19,7 @@ export class AssignmentDetailComponent implements OnInit {
   @Input('asignment') set asignment(asignment:Asignment){
     if(asignment){
       this.form.controls.id.setValue(asignment.id);
-      this.form.controls.peronId.setValue(asignment.personId);
+      this.form.controls.personId.setValue(asignment.personId);
       this.form.controls.taskId.setValue(asignment.taskId);
       this.mode = "Edit";
     }

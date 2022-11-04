@@ -15,7 +15,7 @@ export class TaskService {
     {
       id:2,
       name:"Kill Nao",
-      picture:"https://pbs.twimg.com/media/E4wmQ2PX0AgDvcl.png"
+      picture:"https://i1.sndcdn.com/artworks-Y6zixZ1BUNkzH2vv-z3Xtmw-t500x500.jpg"
     },
     {
       id:3,

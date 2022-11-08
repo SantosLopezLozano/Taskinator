@@ -1,21 +1,26 @@
 import { Asignment } from '../models/asignments';
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AsignmentService {
-
+//YYYY-MM-DDTHH:mm:ss+HH:MM
   private asignment:Asignment[] = [
     {
       id:1,
       personId:2,
       taskId:2,
+      createdAt:moment().toISOString(),
+      dateTime:moment().add(1, 'days').toLocaleString(),
     },
     {
       id:2,
       personId:1,
-      taskId:1
+      taskId:1,
+      createdAt:moment().toISOString(),
+      dateTime:moment().add(1, 'days').toLocaleString(),
     }
   ];
 

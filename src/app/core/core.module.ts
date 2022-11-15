@@ -6,10 +6,11 @@ import { TaskComponent } from './components/task/task.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonComponent } from './components/person/person.component';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
+import es from "@angular/common/locales/es"
 
-
+registerLocaleData(es);
 
 @NgModule({
   declarations: [
@@ -37,6 +38,10 @@ import { CommonModule } from '@angular/common';
     PersonDetailComponent,
     AsignmentComponent,
     AssignmentDetailComponent
+  ],
+  providers:[
+    {provide:LOCALE_ID,
+    useValue: 'es'} 
   ]
 })
 export class CoreModule { }

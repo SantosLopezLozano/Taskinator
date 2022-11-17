@@ -1,3 +1,5 @@
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { AssignmentDetailComponent } from './components/assignment-detail/assignment-detail.component';
 import { AsignmentComponent } from './components/assignment/assignment.component';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
@@ -26,6 +28,7 @@ registerLocaleData(es);
     FormsModule,
     IonicModule.forRoot(),
     ReactiveFormsModule,
+    TranslateModule
   ],
   exports:[
     CommonModule,
@@ -37,7 +40,8 @@ registerLocaleData(es);
     TaskDetailComponent,
     PersonDetailComponent,
     AsignmentComponent,
-    AssignmentDetailComponent
+    AssignmentDetailComponent,
+    TranslateModule,
   ],
   providers:[
     {provide:LOCALE_ID,
